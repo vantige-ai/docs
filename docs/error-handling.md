@@ -273,5 +273,5 @@ try {
 ## Next Steps
 
 - [API Reference](./api/client) - See all possible errors for each method
-- [Examples](./examples) - See error handling in real-world scenarios
+- [Examples](./examples/error-handling) - See error handling in real-world scenarios
 - [Authentication](./authentication) - Learn about authentication-specific errors

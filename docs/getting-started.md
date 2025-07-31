@@ -74,5 +74,5 @@ The SDK is written in TypeScript and includes comprehensive type definitions. No
 
 - [Authentication Guide](./authentication) - Learn about API key management and security
 - [API Reference](./api/client) - Explore all available methods and options
-- [Examples](./examples) - See real-world usage examples
+- [Examples](./examples/basic-usage) - See real-world usage examples
 - [Error Handling](./error-handling) - Learn how to handle errors gracefully

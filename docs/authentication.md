@@ -140,4 +140,4 @@ To get your API keys:
 
 - [Making Queries](./api/client#query) - Learn how to query knowledge bases
 - [Error Handling](./error-handling) - Handle authentication errors gracefully
-- [Examples](./examples) - See authentication in action
+- [Examples](./examples/basic-usage) - See authentication in action
