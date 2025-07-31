@@ -1,0 +1,464 @@
+/**
+ * Vantige AI Documentation Theme
+ * Clean, professional design with proper brand colors
+ */
+
+/* Import Vantige brand fonts */
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Apercu Mono Pro';
+  src: url('/fonts/ApercuMonoPro-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light theme variables */
+:root {
+  /* Primary Colors */
+  --vai-black: #0D0D0D;
+  --vai-white: #F5F5F5;
+  --vai-blue: #038FFC;
+  
+  /* Grays */
+  --vai-gray-1: #B2B2B2;
+  --vai-gray-2: #999999;
+  --vai-gray-3: #808080;
+  --vai-gray-4: #666666;
+  
+  /* Accent Colors */
+  --vai-yellow: #FABA0A;
+  --vai-orange: #FC7A33;
+  --vai-red: #E8453B;
+  --vai-burgundy: #BF054F;
+  --vai-purple: #CF8CFC;
+  --vai-violet: #7A45FC;
+  --vai-azure: #59C9FF;
+  --vai-slate: #008294;
+  --vai-teal: #45EBAB;
+  --vai-green: #03C72E;
+  --vai-chartreuse: #BAFC29;
+  
+  /* Docusaurus overrides */
+  --ifm-color-primary: var(--vai-blue);
+  --ifm-color-primary-dark: #0273d4;
+  --ifm-color-primary-darker: #026bc4;
+  --ifm-color-primary-darkest: #0257a1;
+  --ifm-color-primary-light: #2ea1fd;
+  --ifm-color-primary-lighter: #3ea9fd;
+  --ifm-color-primary-lightest: #71c0fe;
+  
+  /* Typography */
+  --ifm-font-family-base: 'Suisse Intl', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --ifm-font-family-monospace: 'Apercu Mono Pro', 'SF Mono', Monaco, Consolas, monospace;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  
+  /* Backgrounds */
+  --ifm-background-color: #FFFFFF;
+  --ifm-background-surface-color: var(--vai-white);
+  --ifm-navbar-background-color: #FFFFFF;
+  
+  /* Text Colors */
+  --ifm-font-color-base: var(--vai-black);
+  --ifm-heading-color: var(--vai-black);
+  
+  /* Spacing */
+  --ifm-navbar-height: 64px;
+  --ifm-navbar-padding-horizontal: 2rem;
+  
+  /* Code */
+  --ifm-code-font-size: 14px;
+  --ifm-code-padding-horizontal: 0.25rem;
+  --ifm-code-padding-vertical: 0.125rem;
+  --ifm-code-background: rgba(3, 143, 252, 0.08);
+  --ifm-code-color: var(--vai-blue);
+  
+  /* Borders */
+  --ifm-hr-border-color: var(--vai-gray-1);
+  --ifm-toc-border-color: var(--vai-gray-1);
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  /* Backgrounds */
+  --ifm-background-color: var(--vai-black);
+  --ifm-background-surface-color: #1a1a1a;
+  --ifm-navbar-background-color: rgba(13, 13, 13, 0.95);
+  
+  /* Text */
+  --ifm-font-color-base: var(--vai-white);
+  --ifm-heading-color: #FFFFFF;
+  
+  /* Code */
+  --ifm-code-background: rgba(3, 143, 252, 0.15);
+  --ifm-code-color: var(--vai-azure);
+  
+  /* Borders */
+  --ifm-hr-border-color: var(--vai-gray-4);
+  --ifm-toc-border-color: var(--vai-gray-4);
+}
+
+/* Global styles */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+/* Navbar styling */
+.navbar {
+  box-shadow: 0 1px 0 0 var(--ifm-hr-border-color);
+  backdrop-filter: blur(8px);
+}
+
+.navbar__title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--vai-black);
+}
+
+[data-theme='dark'] .navbar__title {
+  color: var(--vai-white);
+}
+
+.navbar__logo {
+  height: 24px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 997px) {
+  .navbar__logo {
+    height: 28px;
+  }
+}
+
+/* Additional navbar fixes */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__item {
+  font-weight: 500;
+}
+
+/* Hero section - clean and simple */
+.hero {
+  background: var(--vai-white);
+  color: var(--vai-black);
+  padding: 4rem 0;
+}
+
+[data-theme='dark'] .hero {
+  background: var(--vai-black);
+  color: var(--vai-white);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero__subtitle {
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--vai-gray-4);
+  margin-bottom: 2rem;
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: var(--vai-gray-1);
+}
+
+/* Buttons */
+.button {
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.875rem 2rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.button--primary {
+  background-color: var(--vai-blue);
+  color: white;
+  border-color: var(--vai-blue);
+}
+
+.button--primary:hover {
+  background-color: #0273d4;
+  border-color: #0273d4;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(3, 143, 252, 0.25);
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: var(--vai-blue);
+  border-color: var(--vai-blue);
+}
+
+.button--secondary:hover {
+  background-color: var(--vai-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Links */
+a {
+  color: var(--vai-blue);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0273d4;
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+}
+
+/* Code blocks */
+pre {
+  border: 1px solid var(--ifm-hr-border-color);
+  border-radius: 8px;
+}
+
+/* Inline code */
+code {
+  font-family: 'Apercu Mono Pro', monospace;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Syntax highlighting */
+.prism-code {
+  font-family: 'Apercu Mono Pro', monospace !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Token colors */
+.token.keyword {
+  color: var(--vai-blue);
+}
+
+.token.string {
+  color: var(--vai-green);
+}
+
+.token.comment {
+  color: var(--vai-gray-2);
+  font-style: italic;
+}
+
+.token.function {
+  color: var(--vai-violet);
+}
+
+.token.number {
+  color: var(--vai-orange);
+}
+
+.token.boolean {
+  color: var(--vai-red);
+}
+
+/* Sidebar */
+.menu__link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--vai-gray-4);
+}
+
+.menu__link:hover {
+  color: var(--vai-black);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  color: var(--vai-white);
+}
+
+.menu__link--active {
+  color: var(--vai-blue);
+}
+
+/* Cards */
+.card {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-hr-border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--vai-blue);
+  box-shadow: 0 4px 16px rgba(3, 143, 252, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--vai-black);
+  color: var(--vai-white);
+  border-top: 1px solid var(--vai-gray-4);
+}
+
+.footer__title {
+  color: var(--vai-white);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer__link-item {
+  color: var(--vai-gray-1);
+  font-weight: 400;
+}
+
+.footer__link-item:hover {
+  color: var(--vai-white);
+  text-decoration: none;
+}
+
+/* Tables */
+table {
+  font-family: 'Apercu Mono Pro', monospace;
+  font-size: 0.875rem;
+  border: 1px solid var(--ifm-hr-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--vai-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+[data-theme='dark'] th {
+  background-color: #1a1a1a;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+.alert--info {
+  --ifm-alert-background-color: rgba(3, 143, 252, 0.05);
+  --ifm-alert-border-color: var(--vai-blue);
+}
+
+.alert--warning {
+  --ifm-alert-background-color: rgba(250, 186, 10, 0.05);
+  --ifm-alert-border-color: var(--vai-yellow);
+}
+
+.alert--danger {
+  --ifm-alert-background-color: rgba(232, 69, 59, 0.05);
+  --ifm-alert-border-color: var(--vai-red);
+}
+
+.alert--success {
+  --ifm-alert-background-color: rgba(3, 199, 46, 0.05);
+  --ifm-alert-border-color: var(--vai-green);
+}
+
+/* Search */
+.DocSearch-Button {
+  border-radius: 6px;
+  background: var(--vai-white);
+  border: 1px solid var(--vai-gray-1);
+}
+
+[data-theme='dark'] .DocSearch-Button {
+  background: #1a1a1a;
+  border-color: var(--vai-gray-4);
+}
+
+/* Feature sections */
+.features {
+  padding: 5rem 0;
+  background: var(--vai-white);
+}
+
+[data-theme='dark'] .features {
+  background: var(--vai-black);
+}
+
+/* Responsive */
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .navbar__logo {
+    height: 28px;
+  }
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(3, 143, 252, 0.2);
+  color: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vai-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vai-gray-1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vai-gray-3);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: var(--vai-black);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: var(--vai-gray-4);
+}
